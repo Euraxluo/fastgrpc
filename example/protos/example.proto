@@ -1,0 +1,19 @@
+syntax = "proto3";
+package example;
+
+service Example{
+  rpc getGithubUrl (request)returns (userGithub){};
+  rpc getMessage (request)returns ( userGithubMessage){};
+}
+
+message request{
+  string name = 1;//用户名
+  string github = 2;//github host
+}
+message userGithub{
+  string url = 1;//返回github 主页url
+}
+
+message userGithubMessage{
+  string msg = 1;//返回该用户的github的详细信息
+}

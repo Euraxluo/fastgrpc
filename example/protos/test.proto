@@ -1,0 +1,19 @@
+syntax = "proto3";
+package example;
+
+service Test{
+  rpc TestApi (testreq)returns (testresp){};
+}
+
+message testreq{
+  string user = 1;//用户名
+  Role role=2;
+  enum Role{//角色
+    ADMIN = 0;
+    USER = 1;
+    DRIVER = 2;
+  }
+}
+message testresp{
+  string userRole = 1;
+}
